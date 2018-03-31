@@ -1,2 +1,4 @@
-# asid
+ASID
+====
+
 Another Short ID generator. 
