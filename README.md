@@ -1,11 +1,16 @@
 TRID
 ====
 
-![pic1]
-
-Trivial request ID generator - generates a random id for a process and adds fast
+Trivial request ID generator - crafts random id for a process and adds fast
 sequential ids on each call. Designed for request/response logging and error 
 tracking.
+
+![pic1]
+
+It uses `crypto` for random string generation, has no external dependencies and
+is thoroughly tested in production. The reason this package has been created is
+that [hyperid] (the package I originally used) has too long random parts. Also
+I felt like I don't need encoding/decoding.
 
 
 Install
@@ -16,8 +21,8 @@ npm i trid
 ```
 
 
-Use
----
+How to use
+----------
 
 Initialize TRID with the rest of your service:
 
@@ -55,17 +60,21 @@ console.log(`${timestamp} ${LEVEL} [${id.seq()}] performing request...`)
 API
 ---
 
-* **constructor options** - you can define `prefix` (default - empty string),
-  `length` of the random part (default - `5`) and starting counter value. An id
-  basically is generated like this: `{prefix}.{random}.{counter}`
+* `new TRID({...})` - you can define the following parameters while constructing
+  a trid instance:
+    - `prefix` is added to the beginning of an id (default - empty string),
+    - `length` of the random part (default - `5`)
+    - `count` - starting sequential counter value.
+  An id basically is generated like this: `{prefix}.{random}.{counter}`
 
-* **trid.base()** - returns base part of the id (`{prefix}.{random}`). Good for
+* `trid.base()`` - returns base part of the id (`{prefix}.{random}`). Good for
   server instance identification.
 
-* **trid.seq()** - returns sequential id: `{prefix}.{random}.{counter}`. *Note:
+* `trid.seq()` - returns sequential id: `{prefix}.{random}.{counter}`. *Note:
   when counter reaches Number.MAX_SAFE_INTEGER, the base value is regenerated
   and the counter is restarted*
 
 
 
 [pic1]: pic1.png
+[hyperid]: https://www.npmjs.com/package/hyperid
