@@ -1,4 +1,4 @@
-ASID
+TRID
 ====
 
-Another Short ID generator. 
+Trivial request ID generator
