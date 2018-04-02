@@ -4,7 +4,7 @@ const TRID = require('./');
 
 describe('trid', () => {
 
-    const length = 3;
+    const length = 4;
     const prefix = 'test';
     const trid = new TRID({prefix:'test', length});
 
@@ -21,6 +21,7 @@ describe('trid', () => {
         assert.equal(seq, `${trid.base()}.2`);
         seq = trid.seq();
         assert.equal(seq, `${trid.base()}.3`);
+        console.log(trid.seq());
         done();
     });
 

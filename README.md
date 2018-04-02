@@ -1,4 +1,71 @@
 TRID
 ====
 
-Trivial request ID generator
+![pic1]
+
+Trivial request ID generator - generates a random id for a process and adds fast
+sequential ids on each call. Designed for request/response logging and error 
+tracking.
+
+
+Install
+-------
+
+```
+npm i trid
+```
+
+
+Use
+---
+
+Initialize TRID with the rest of your service:
+
+```js
+const TRID = require('trid');
+
+const id = new TRID({prefix: 'srv1', length: 4});
+```
+
+Get service instance id with `trid.base()`:
+
+```js
+console.log(`Starting server instance: ${id.base()}`);
+```
+
+```
+Starting server instance: srv1.4D2m
+```
+
+Use `trid.seq()` to identify requests (as well as responses) or other activity:
+
+```js
+...
+console.log(`${timestamp} ${LEVEL} [${id.seq()}] performing request...`)
+
+```
+
+```
+...
+2018-04-02T12:17:12.654Z DEBUG [srv1.4D2m.42] performing request...
+
+```
+
+
+API
+---
+
+* **constructor options** - you can define `prefix` (default - empty string),
+  `length` of the random part (default - `5`) and starting counter value. An id
+  basically is generated like this: `{prefix}.{random}.{counter}`
+
+* **trid.base()** - returns base part of the id (`{prefix}.{random}`). Good for
+  server instance identification.
+
+* **trid.seq()** - returns sequential id: `{prefix}.{random}.{counter}`. *Note:
+  when counter reaches Number.MAX_SAFE_INTEGER, the base value is regenerated
+  and the counter is restarted*
+
+
+
+[pic1]: pic1.png
