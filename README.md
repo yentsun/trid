@@ -1,7 +1,7 @@
-TRID
+trid
 ====
 
-Trivial request ID generator - crafts random id for a process and adds fast
+*Trivial request ID* generator - crafts random id for a process and adds fast
 sequential ids on each call. Designed for request/response logging and error 
 tracking.
 
@@ -67,7 +67,7 @@ API
     - `count` - starting sequential counter value.
   An id basically is generated like this: `{prefix}.{random}.{counter}`
 
-* `trid.base()`` - returns base part of the id (`{prefix}.{random}`). Good for
+* `trid.base()` - returns base part of the id (`{prefix}.{random}`). Good for
   server instance identification.
 
 * `trid.seq()` - returns sequential id: `{prefix}.{random}.{counter}`. *Note:
