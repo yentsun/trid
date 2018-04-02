@@ -21,7 +21,6 @@ describe('trid', () => {
         assert.equal(seq, `${trid.base()}.2`);
         seq = trid.seq();
         assert.equal(seq, `${trid.base()}.3`);
-        console.log(trid.seq());
         done();
     });
 
