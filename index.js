@@ -3,8 +3,14 @@ const crypto = require('crypto');
 
 module.exports = class {
 
-    constructor({prefix='', length=5, count=0}) {
+    constructor(options) {
 
+        const defaultOptions = {
+            length: 5,
+            count: 0,
+            prefix: null
+        };
+        const {prefix, length, count} = Object.assign(defaultOptions, options);
         this._prefix = prefix;
         this._length = length;
         this._rebase(count);
@@ -17,7 +23,7 @@ module.exports = class {
             .slice(0, this._length)
             .replace(/\//g, '_')
             .replace(/\+/g, '-');
-        this._base = `${this._prefix}.${this._rnd}`;
+        this._base = `${this._prefix ? this._prefix+'.' : ''}${this._rnd}`;
         this._count = count;
     }
 
