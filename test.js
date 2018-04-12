@@ -21,6 +21,7 @@ describe('trid', () => {
         assert.equal(seq, `${trid.base()}.2`);
         seq = trid.seq();
         assert.equal(seq, `${trid.base()}.3`);
+        console.log('custom options:', trid.seq());
         done();
     });
 
@@ -31,6 +32,13 @@ describe('trid', () => {
         maxId.seq();
         assert.notEqual(base, maxId.base());
         assert.equal(maxId._count, 0);
+        done();
+    });
+
+    it('constructs without arguments', (done) => {
+        const trid = new TRID();
+        assert(trid.base());
+        console.log('default options:', trid.seq());
         done();
     });
 

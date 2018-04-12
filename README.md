@@ -10,7 +10,8 @@ tracking.
 It uses `crypto` for random string generation, has no external dependencies and
 is thoroughly tested in production. The reason this package has been created is
 that [hyperid] (the package I originally used) has too long random parts. Also
-I felt like I don't need encoding/decoding.
+I felt like I don't need encoding/decoding. TRID ids are url-safe and 
+NATS-subject-safe.
 
 
 Install
@@ -75,6 +76,17 @@ API
   and the counter is restarted*
 
 
+Examples
+--------
+
+This is how trid ids look in [tasu]:
+
+![tasu_pic]
+
+([code])
 
 [pic1]: pic1.png
 [hyperid]: https://www.npmjs.com/package/hyperid
+[tasu]: https://www.npmjs.com/package/tasu
+[tasu_pic]: Selection_002.png
+[code]: https://github.com/yentsun/tasu/blob/f95bd9ced530e64ab5777597321d52c959ad96a6/index.js#L146-L160
