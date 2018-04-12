@@ -12,7 +12,11 @@ module.exports = class {
 
     _rebase(count=0) {
 
-        this._rnd = crypto.randomBytes(this._length).toString('base64').slice(0, this._length);
+        this._rnd = crypto.randomBytes(this._length)
+            .toString('base64')
+            .slice(0, this._length)
+            .replace(/\//g, '_')
+            .replace(/\+/g, '-');
         this._base = `${this._prefix}.${this._rnd}`;
         this._count = count;
     }
