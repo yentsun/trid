@@ -85,7 +85,7 @@ This is how trid ids look in [tasu]:
 
 ([code])
 
-[pic1]: pic1.png
+[pic1]: https://github.com/yentsun/trid/raw/master/pic1.png
 [hyperid]: https://www.npmjs.com/package/hyperid
 [tasu]: https://www.npmjs.com/package/tasu
 [tasu_pic]: Selection_002.png
