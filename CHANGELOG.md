@@ -1,5 +1,5 @@
-[0.1.2]
--------
+[0.1.2] - 2023-01-30
+--------------------
 - [x] Update `mocha` dev dependency
 - [x] Move to esm modules
 
