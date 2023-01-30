@@ -17,6 +17,7 @@
     "hyperid"
   ],
   "author": "Maksim Korinets",
+  "type": "module",
   "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/yentsun/asid/issues"

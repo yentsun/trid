@@ -1,5 +1,5 @@
-const assert = require('assert');
-const TRID = require('./');
+import assert from 'assert';
+import TRID from './index.js';
 
 
 describe('trid', () => {

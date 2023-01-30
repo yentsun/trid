@@ -1,7 +1,7 @@
 [0.1.2]
 -------
 - [x] Update `mocha` dev dependency
-- [ ] Move to esm modules
+- [x] Move to esm modules
 
 
 [0.1.1] - 2018-04-12
