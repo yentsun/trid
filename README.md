@@ -1,6 +1,8 @@
 trid
 ====
 
+[![Known Vulnerabilities](https://snyk.io/test/github/yentsun/trid/badge.svg?targetFile=package.json)](https://snyk.io/test/github/yentsun/trid?targetFile=package.json)
+
 *Trivial request ID* generator - crafts random id for a process and adds fast
 sequential ids on each call. Designed for request/response logging and error 
 tracking.
@@ -85,7 +87,7 @@ This is how trid ids look in [tasu]:
 
 ([code])
 
-[pic1]: pic1.png
+[pic1]: https://github.com/yentsun/trid/raw/master/pic1.png
 [hyperid]: https://www.npmjs.com/package/hyperid
 [tasu]: https://www.npmjs.com/package/tasu
 [tasu_pic]: Selection_002.png

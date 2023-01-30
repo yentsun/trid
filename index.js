@@ -1,7 +1,7 @@
-const crypto = require('crypto');
+import crypto from 'crypto';
 
 
-module.exports = class {
+export default class {
 
     constructor(options) {
 
@@ -10,7 +10,7 @@ module.exports = class {
             count: 0,
             prefix: null
         };
-        const {prefix, length, count} = Object.assign(defaultOptions, options);
+        const { prefix, length, count } = Object.assign(defaultOptions, options);
         this._prefix = prefix;
         this._length = length;
         this._rebase(count);
@@ -39,5 +39,4 @@ module.exports = class {
             this._rebase();
         return `${this._base}.${this._count}`;
     }
-
 };
