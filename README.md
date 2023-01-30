@@ -1,6 +1,8 @@
 trid
 ====
 
+[![Known Vulnerabilities](https://snyk.io/test/github/yentsun/trid/badge.svg?targetFile=package.json)](https://snyk.io/test/github/yentsun/trid?targetFile=package.json)
+
 *Trivial request ID* generator - crafts random id for a process and adds fast
 sequential ids on each call. Designed for request/response logging and error 
 tracking.
